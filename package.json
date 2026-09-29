@@ -29,7 +29,7 @@
     "demo:gif": "node scripts/demo-gif.mjs"
   },
   "engines": {
-    "node": ">=20.11"
+    "node": ">=22.13"
   },
   "devDependencies": {
     "playwright-core": "1.63.0",

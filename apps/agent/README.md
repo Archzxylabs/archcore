@@ -4,14 +4,14 @@ The active product contract is [PRD v0.5](../../docs/ARCHcore_PRD_P0_v0.5_END_TO
 
 P0 contract uses seven USDG plans and `rent(nodeId,planId)`; ETH is gas only. Before `startRental`, signer address must equal the provider snapshotted by the contract. Agent must use `packages/chain` normalized types and revalidate authoritative rental state before session issue and every inference. Exact API, auth, session, limits and SSE event contracts are in the ledger.
 
-## Implementation alignment status
+## Implementation boundaries
 
-Current source is verified in the [local-product report](../../docs/implementation-notes/integration/2026-09-28-local-product-readiness.md). The active mismatch register separates local evidence from live-only gates. Do not route renter requests directly to an inference backend, treat a test fake as runtime, invent GPU telemetry, or claim live OmniRoute readiness from local tests.
+Current source, generated ABI and automated tests are the implementation evidence. Do not route renter requests directly to an inference backend, treat a test fake as runtime, invent GPU telemetry, or claim live OmniRoute readiness from local tests.
 
 ## Local development
 
 ```sh
-cd /home/pupulion/archcore
+cd archcore
 npm run build
 AGENT_HOST=127.0.0.1 AGENT_PORT=8787 AGENT_ALLOWED_ORIGINS=http://localhost:8787 AGENT_AUDIENCE=http://localhost:8787 AGENT_AUTO_START=false INFERENCE_BACKEND_MODE=demo npm run start -w @archcore/agent
 ```
