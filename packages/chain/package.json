@@ -1,0 +1,59 @@
+{
+  "name": "@archcore/chain",
+  "version": "0.1.0",
+  "private": true,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "//exports": "Node clients load generated artifacts with abi.ts. The Web build resolves that module to abi.browser.ts, which imports the same generated JSON without Node globals or filesystem shims.",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./decode": {
+      "types": "./dist/decode.d.ts",
+      "default": "./dist/decode.js"
+    },
+    "./status": {
+      "types": "./dist/status.d.ts",
+      "default": "./dist/status.js"
+    },
+    "./abi": {
+      "types": "./dist/abi.d.ts",
+      "default": "./dist/abi.js"
+    },
+    "./env": {
+      "types": "./dist/env.d.ts",
+      "default": "./dist/env.js"
+    },
+    "./rentalManagerClient": {
+      "types": "./dist/rentalManagerClient.d.ts",
+      "default": "./dist/rentalManagerClient.js"
+    },
+    "./computeAssetClient": {
+      "types": "./dist/computeAssetClient.d.ts",
+      "default": "./dist/computeAssetClient.js"
+    },
+    "./*": {
+      "types": "./dist/*.d.ts",
+      "default": "./dist/*.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.test.json",
+    "test": "node --test --import tsx test/*.test.ts"
+  },
+  "dependencies": {
+    "@archcore/shared": "*",
+    "viem": "^2.56.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "tsx": "^4.19.2"
+  }
+}

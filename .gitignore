@@ -1,0 +1,41 @@
+node_modules/
+dist/
+.next/
+out/
+coverage/
+*.tsbuildinfo
+target/
+contracts/*/target/
+.env
+.env.*
+!.env.example
+.DS_Store
+.next/cache/
+
+# Local AI/tool state and private work transcripts
+.claude/settings.local.json
+codex-session-*.md
+.tmp/
+
+# Internal coordination history; not part of the public product repository
+docs/archive/
+docs/prompts/
+docs/implementation-notes/
+docs/coordination/README.md
+
+# Local graph/index output is not source or release evidence
+graphify-out/
+GRAPH_REPORT.md
+graph.json
+
+# Deployment secrets and local provider state (never commit)
+.archcore-local/
+*.local.md
+
+# Provider Agent local SQLite settlement journal
+apps/agent/**/data/
+apps/apps/agent/data/
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+*.db

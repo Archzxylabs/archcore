@@ -1,0 +1,11 @@
+[toolchain]
+# cargo-stylus looks for this file in the crate directory, not the workspace root,
+# and refuses to build the wasm when it is absent — even though the workspace root
+# already pins the same channel and rustup resolves the override correctly. The
+# pin is therefore repeated here so `cargo stylus check` works from
+# `contracts/<crate>`, which is where the contract is deployed from.
+channel = "1.98.1"
+
+# Both triples: the wasm build for deployment, and the host target that
+# `cargo stylus check` uses to run the ABI export alongside it.
+targets = ["wasm32-unknown-unknown", "x86_64-unknown-linux-gnu"]

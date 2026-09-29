@@ -1,0 +1,29 @@
+[package]
+name = "rental-manager"
+description = "ARCHcore RentalManager — node rental lifecycle and escrow (Arbitrum Stylus)"
+version = "0.1.0"
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[lib]
+crate-type = ["lib", "cdylib"]
+
+[dependencies]
+stylus-sdk = "=0.9.0"
+openzeppelin-stylus = "=0.3.0"
+alloy-primitives = { version = "=0.8.20", default-features = false }
+alloy-sol-types = { version = "=0.8.20", default-features = false }
+
+[dev-dependencies]
+compute-asset = { path = "../compute-asset" }
+motsu = "=0.10.0"
+# `motsu` enables `alloy-primitives/arbitrary`, which pulls in `derive_arbitrary`
+# without enabling `arbitrary/derive`. Since `derive_arbitrary` generates code that
+# references `arbitrary::details`, the feature has to be enabled explicitly.
+arbitrary = { version = "=1.4.2", features = ["derive"] }
+
+[features]
+default = ["mini-alloc"]
+mini-alloc = []
+export-abi = ["stylus-sdk/export-abi", "stylus-sdk/debug", "openzeppelin-stylus/export-abi"]

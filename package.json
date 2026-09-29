@@ -1,0 +1,38 @@
+{
+  "name": "archcore",
+  "version": "0.1.0",
+  "private": true,
+  "description": "ARCHcore P0 v0.5 — USDG plan-based compute rental with Stylus contracts, Provider Agent, private OmniRoute, and explicit demo inference",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "contracts": "node scripts/contracts.mjs",
+    "contracts:check": "node scripts/contracts.mjs check",
+    "contracts:abi": "node scripts/contracts.mjs abi",
+    "contracts:test": "node scripts/contracts.mjs test",
+    "contracts:linked-test": "node scripts/contracts.mjs linked-test",
+    "contracts:fmt": "node scripts/contracts.mjs fmt",
+    "build": "npm run build --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "agent:dev": "npm run dev -w @archcore/agent",
+    "web:dev": "npm run dev -w @archcore/web",
+    "qa:local-product": "node --import tsx scripts/local-product-qa.ts",
+    "test:agent:hermetic": "node scripts/hermetic-agent-tests.mjs",
+    "preflight:readonly": "node --import tsx scripts/readonly-preflight.ts",
+    "verify:local-product": "node scripts/verify-local-product.mjs",
+    "demo:record": "node --import tsx scripts/record-demo-video.ts",
+    "demo:rehearse": "node --import tsx scripts/record-demo-video.ts --rehearse",
+    "demo:gif": "node scripts/demo-gif.mjs"
+  },
+  "engines": {
+    "node": ">=20.11"
+  },
+  "devDependencies": {
+    "playwright-core": "1.63.0",
+    "typescript": "^5.9.3"
+  }
+}

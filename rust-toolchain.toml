@@ -1,0 +1,13 @@
+[toolchain]
+# Pinned to an exact version, not a channel. `cargo stylus check` verifies
+# reproducibility and refuses generic channels such as "stable" or "nightly",
+# because the same channel name would otherwise resolve to a different compiler
+# the next day and invalidate prior checks.
+#
+# Keep this in sync with the `rustc` that reproduced the release build recorded
+# in docs/implementation-notes/abi-chain/.
+channel = "1.98.1"
+
+# `cargo stylus check` builds the contract as WASM and additionally runs the
+# host-side ABI export, so both triples need their standard libraries present.
+targets = ["wasm32-unknown-unknown", "x86_64-unknown-linux-gnu"]

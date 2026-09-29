@@ -1,0 +1,485 @@
+[
+ {
+  "inputs": [
+   {
+    "internalType": "address",
+    "name": "",
+    "type": "address"
+   },
+   {
+    "internalType": "address",
+    "name": "",
+    "type": "address"
+   }
+  ],
+  "name": "CallerNotProvider",
+  "type": "error"
+ },
+ {
+  "inputs": [],
+  "name": "ComputeAssetNotSet",
+  "type": "error"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "uint256",
+    "name": "",
+    "type": "uint256"
+   }
+  ],
+  "name": "DeadlineAlreadyPassed",
+  "type": "error"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "uint256",
+    "name": "",
+    "type": "uint256"
+   }
+  ],
+  "name": "DeadlineNotReached",
+  "type": "error"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "bytes",
+    "name": "",
+    "type": "bytes"
+   }
+  ],
+  "name": "ExternalCallFailed",
+  "type": "error"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "uint8",
+    "name": "",
+    "type": "uint8"
+   }
+  ],
+  "name": "InvalidPlan",
+  "type": "error"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "uint256",
+    "name": "",
+    "type": "uint256"
+   },
+   {
+    "internalType": "uint8",
+    "name": "",
+    "type": "uint8"
+   },
+   {
+    "internalType": "uint8",
+    "name": "",
+    "type": "uint8"
+   }
+  ],
+  "name": "InvalidRentalState",
+  "type": "error"
+ },
+ {
+  "inputs": [],
+  "name": "InvalidRenter",
+  "type": "error"
+ },
+ {
+  "inputs": [],
+  "name": "NativePaymentNotAccepted",
+  "type": "error"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "uint256",
+    "name": "",
+    "type": "uint256"
+   }
+  ],
+  "name": "NodeAlreadyListed",
+  "type": "error"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "uint256",
+    "name": "",
+    "type": "uint256"
+   }
+  ],
+  "name": "NodeDoesNotExist",
+  "type": "error"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "uint256",
+    "name": "",
+    "type": "uint256"
+   }
+  ],
+  "name": "NodeNotActive",
+  "type": "error"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "address",
+    "name": "",
+    "type": "address"
+   }
+  ],
+  "name": "OwnableInvalidOwner",
+  "type": "error"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "address",
+    "name": "",
+    "type": "address"
+   }
+  ],
+  "name": "OwnableUnauthorizedAccount",
+  "type": "error"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "uint8",
+    "name": "",
+    "type": "uint8"
+   }
+  ],
+  "name": "PlanNotActive",
+  "type": "error"
+ },
+ {
+  "inputs": [],
+  "name": "Reentrancy",
+  "type": "error"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "uint256",
+    "name": "",
+    "type": "uint256"
+   }
+  ],
+  "name": "RentalDoesNotExist",
+  "type": "error"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "address",
+    "name": "",
+    "type": "address"
+   },
+   {
+    "internalType": "uint256",
+    "name": "",
+    "type": "uint256"
+   }
+  ],
+  "name": "TransferFailed",
+  "type": "error"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "uint256",
+    "name": "node_id",
+    "type": "uint256"
+   }
+  ],
+  "name": "activeRentalForNode",
+  "outputs": [
+   {
+    "internalType": "bool",
+    "name": "",
+    "type": "bool"
+   },
+   {
+    "internalType": "uint256",
+    "name": "",
+    "type": "uint256"
+   }
+  ],
+  "stateMutability": "view",
+  "type": "function"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "uint256",
+    "name": "rental_id",
+    "type": "uint256"
+   }
+  ],
+  "name": "cancelExpiredReservation",
+  "outputs": [],
+  "stateMutability": "nonpayable",
+  "type": "function"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "uint256",
+    "name": "node_id",
+    "type": "uint256"
+   }
+  ],
+  "name": "getListing",
+  "outputs": [
+   {
+    "internalType": "uint256",
+    "name": "",
+    "type": "uint256"
+   },
+   {
+    "internalType": "address",
+    "name": "",
+    "type": "address"
+   },
+   {
+    "internalType": "bool",
+    "name": "",
+    "type": "bool"
+   }
+  ],
+  "stateMutability": "view",
+  "type": "function"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "uint256",
+    "name": "node_id",
+    "type": "uint256"
+   }
+  ],
+  "name": "getNode",
+  "outputs": [
+   {
+    "internalType": "uint256",
+    "name": "",
+    "type": "uint256"
+   },
+   {
+    "internalType": "address",
+    "name": "",
+    "type": "address"
+   },
+   {
+    "internalType": "bytes32",
+    "name": "",
+    "type": "bytes32"
+   },
+   {
+    "internalType": "bool",
+    "name": "",
+    "type": "bool"
+   }
+  ],
+  "stateMutability": "view",
+  "type": "function"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "uint8",
+    "name": "plan_id",
+    "type": "uint8"
+   }
+  ],
+  "name": "getPlan",
+  "outputs": [
+   {
+    "internalType": "uint8",
+    "name": "",
+    "type": "uint8"
+   },
+   {
+    "internalType": "uint256",
+    "name": "",
+    "type": "uint256"
+   },
+   {
+    "internalType": "uint256",
+    "name": "",
+    "type": "uint256"
+   },
+   {
+    "internalType": "bool",
+    "name": "",
+    "type": "bool"
+   },
+   {
+    "internalType": "bool",
+    "name": "",
+    "type": "bool"
+   }
+  ],
+  "stateMutability": "view",
+  "type": "function"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "uint256",
+    "name": "rental_id",
+    "type": "uint256"
+   }
+  ],
+  "name": "getRental",
+  "outputs": [
+   {
+    "internalType": "uint256",
+    "name": "",
+    "type": "uint256"
+   },
+   {
+    "internalType": "uint256",
+    "name": "",
+    "type": "uint256"
+   },
+   {
+    "internalType": "uint8",
+    "name": "",
+    "type": "uint8"
+   },
+   {
+    "internalType": "address",
+    "name": "",
+    "type": "address"
+   },
+   {
+    "internalType": "address",
+    "name": "",
+    "type": "address"
+   },
+   {
+    "internalType": "uint256",
+    "name": "",
+    "type": "uint256"
+   },
+   {
+    "internalType": "uint256",
+    "name": "",
+    "type": "uint256"
+   },
+   {
+    "internalType": "uint8",
+    "name": "",
+    "type": "uint8"
+   },
+   {
+    "internalType": "uint256",
+    "name": "",
+    "type": "uint256"
+   },
+   {
+    "internalType": "uint256",
+    "name": "",
+    "type": "uint256"
+   },
+   {
+    "internalType": "uint256",
+    "name": "",
+    "type": "uint256"
+   },
+   {
+    "internalType": "uint256",
+    "name": "",
+    "type": "uint256"
+   }
+  ],
+  "stateMutability": "view",
+  "type": "function"
+ },
+ {
+  "inputs": [],
+  "name": "paymentToken",
+  "outputs": [
+   {
+    "internalType": "address",
+    "name": "",
+    "type": "address"
+   }
+  ],
+  "stateMutability": "view",
+  "type": "function"
+ },
+ {
+  "inputs": [],
+  "name": "planCount",
+  "outputs": [
+   {
+    "internalType": "uint8",
+    "name": "",
+    "type": "uint8"
+   }
+  ],
+  "stateMutability": "view",
+  "type": "function"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "uint256",
+    "name": "node_id",
+    "type": "uint256"
+   },
+   {
+    "internalType": "uint8",
+    "name": "plan_id",
+    "type": "uint8"
+   }
+  ],
+  "name": "rent",
+  "outputs": [
+   {
+    "internalType": "uint256",
+    "name": "",
+    "type": "uint256"
+   }
+  ],
+  "stateMutability": "nonpayable",
+  "type": "function"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "uint256",
+    "name": "rental_id",
+    "type": "uint256"
+   }
+  ],
+  "name": "settleAfterExpiry",
+  "outputs": [],
+  "stateMutability": "nonpayable",
+  "type": "function"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "uint256",
+    "name": "rental_id",
+    "type": "uint256"
+   }
+  ],
+  "name": "startRental",
+  "outputs": [],
+  "stateMutability": "nonpayable",
+  "type": "function"
+ }
+]

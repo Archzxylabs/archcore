@@ -1,0 +1,21 @@
+{
+  "name": "@archcore/web",
+  "version": "0.1.0",
+  "private": true,
+  "description": "ARCHcore renter frontend: wallet connect, on-chain rental lifecycle, authenticated inference over SSE.",
+  "type": "module",
+  "main": "public/app.js",
+  "scripts": {
+    "build": "node build.mjs",
+    "clean": "node -e \"require('node:fs').rmSync('public/dist',{recursive:true,force:true}); require('node:fs').rmSync('public/rental-manager.json',{force:true})\"",
+    "dev": "node build.mjs --watch",
+    "test": "node --test --import tsx test/*.test.ts",
+    "typecheck": "tsc -p tsconfig.json",
+    "verify": "npm run typecheck && npm run test && npm run build"
+  },
+  "dependencies": {
+    "@archcore/chain": "*",
+    "@archcore/shared": "*",
+    "viem": "^2.56.8"
+  }
+}
